@@ -20,9 +20,8 @@ class ViewController: UIViewController {
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
         let userAnswer = sender.currentTitle!
-        
-        let userGotItRight = quizBrain.checkAnswer(userAnswer: userAnswer)
-        
+        let userGotItRight = quizBrain.checkAnswer(userAnswer)
+       
         if userGotItRight {
             sender.backgroundColor = UIColor.green
         } else {
@@ -37,8 +36,8 @@ class ViewController: UIViewController {
     @objc func updateUI() {
         questionLabel.text = quizBrain.getQuestionText()
         progressBar.progress = quizBrain.getProgress()
-        scoreLabel.text = "Score: \(quizBrain.getScore())"
-        
+        scoreLabel.text = "Good Luck, True Believer!" + "\n\n" + "Score: \(quizBrain.getScore())"
+      
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
     }
